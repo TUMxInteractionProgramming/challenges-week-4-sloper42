@@ -30,8 +30,6 @@ function switchChannel(channel) {
     $('#channel-star').removeClass('fa-star far');
     $('#channel-star').removeClass('fa-star fas');
 
-    
-console.log (channel.starred);
 
     channel.starred ? 
     $('#channel-star').addClass('fas')
@@ -40,7 +38,6 @@ console.log (channel.starred);
 
     $('#channel-star').addClass('fa-star');
 
-    console.log (document.getElementById('channel-star').outerHTML);
     /* #6 #highlight the selected #channel.
        This is inefficient (jQuery has to search all channel list items), but we'll change it later on */
     $('#channels li').removeClass('selected');
@@ -51,6 +48,8 @@ console.log (channel.starred);
 function star() {
     $('#channel-star').toggleClass("fas");
     $('#channel-star').toggleClass("far");
+
+    currentChannel.starred = ! currentChannel.starred;
 }
 
 /**
