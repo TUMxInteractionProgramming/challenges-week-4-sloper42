@@ -95,7 +95,9 @@ h1 #channel-star {
     /* #6 #liking #filled  */
     position:absolute;
     right: 16px;
+    font-size: 24px;
 }
+
 
 /* CHANNELS LIST */
 
@@ -138,6 +140,10 @@ li.selected {
     border-left: 4px solid #3F51B5;
 }
 
+/* font awesom size 24px */
+li span {
+    font-size:24px;
+}
 /* TAB BAR */
 
 /* #5 #smileys #lazy: we can reuse most of the tab-bar's styles for the chat-bar */
