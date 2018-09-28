@@ -13,15 +13,23 @@ function Message(text) {
 function sendMessage() 
 {
 
-    var msg = new Message("Hello Chatter");
+    var text = $('#send-input').val();
+
+    console.log(text);
+
+    var msg = new Message(text);
 
     console.log(msg);
+
+    $('#messages').append(createMessageElement(msg));
+
+    $('#send-input').val("");
 }
 
 function createMessageElement(messageObject) 
 {
 
-    var expiresIn = (this.expires.On - Date()) / 60000;
+    var expiresIn = (this.expiresOn - Date()) / 60000;
 return
 "<div class=\"message\">" +
 "<h3><a href=\"" + messageObject.createdBy +"\" target=\"_blank\"><strong>" + messageObject.createdBy +"</strong></a>" +

@@ -174,8 +174,10 @@
     <div id="chat-bar"> <!-- #6 #smile #show the menu on click -->
         <button id="emojis-button" onclick="toggleEmojis()"><img src="http://ip.lfe.mw.tum.de/sections/smile-o.png" alt="Smiley"></button>
         <div id="emojis">&#x1F601; &#x1F602; &#x1F603; &#x1F604; &#x1F605; &#x1F606; &#x1F607;</div>
-         <!-- #8 send arrow -->
-         <button onclick="sendMessage()">
+        <!-- #8 input box -->
+        <input id="send-input" type="name"  maxlength="140" placeholder="Message...">
+        <!-- #8 send arrow -->
+         <button id="send-button" onclick="sendMessage()">
          <i class="fas fa-arrow-right"></i>
         </button>
     </div>

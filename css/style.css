@@ -191,6 +191,21 @@ li span {
     flex-grow: 0;
 }
 
+#send-input {
+
+    flex-grow: 1;
+}
+#send-button {
+    /* #5 #channels right-align channel-meta #icons absolute = relative to li */
+    position: absolute;
+    right: 16px;
+    top: 12px;
+}
+
+#chat-bar i {
+    font-size: 24px;
+}
+
 #emojis {
     /* #5 #smileys #emojis menu */
     /* colors and borders */
