@@ -3,25 +3,40 @@ console.log("App is alive");
 
 /**
  * #6 #Switcher function for the #channels name in the right app bar
- * @param channelName Text which is set
+ * @param channel Channel Object
  */
-function switchChannel(channelName) {
+function switchChannel(channel) {
     //Log the channel switch
-    console.log("Tuning in to channel", channelName);
+    console.log("Tuning in to channel", channel);
 
     //Write the new channel to the right app bar
-    document.getElementById('channel-name').innerHTML = channelName;
+    document.getElementById('channel-name').innerHTML = channel.name;
 
     //#6 change the #channel #location
-    document.getElementById('channel-location').innerHTML = 'by <a href="http://w3w.co/upgrading.never.helps" target="_blank"><strong>upgrading.never.helps</strong></a>';
+    var location ="by <a href=\"http://w3w.co/" + channel.createdBy +"\" target=\"_blank\"><strong>" + channel.createdBy + "</strong></a>";
 
+    document.getElementById('channel-location').innerHTML = location;
     /* #6 #liking channels on #click */
-    $('#channel-star').attr('src', 'http://ip.lfe.mw.tum.de/sections/star-o.png');
+    console.log (document.getElementById('channel-star').outerHTML);
 
+    $('#channel-star').removeClass('fa-star far');
+    $('#channel-star').removeClass('fa-star fas');
+
+    
+console.log (channel.starred);
+
+    channel.starred ? 
+    $('#channel-star').addClass('fas')
+    :
+    $('#channel-star').addClass('far');
+
+    $('#channel-star').addClass('fa-star');
+
+    console.log (document.getElementById('channel-star').outerHTML);
     /* #6 #highlight the selected #channel.
        This is inefficient (jQuery has to search all channel list items), but we'll change it later on */
     $('#channels li').removeClass('selected');
-    $('#channels li:contains(' + channelName + ')').addClass('selected');
+    $('#channels li:contains(' + channel.name + ')').addClass('selected');
 }
 
 /* #6 #liking a channel on #click */
