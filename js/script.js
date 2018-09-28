@@ -1,6 +1,12 @@
 /* #6 start the #external #action and say hello */
 console.log("App is alive");
 
+var currentLocation = 
+{
+     longitude: "E013° 22.166",
+     latitude: "N52° 31.212",
+     what3words:"dignity.rock.cakes"
+};
 /**
  * #6 #Switcher function for the #channels name in the right app bar
  * @param channel Channel Object
@@ -8,6 +14,8 @@ console.log("App is alive");
 function switchChannel(channel) {
     //Log the channel switch
     console.log("Tuning in to channel", channel);
+
+    currentChannel = channel;
 
     //Write the new channel to the right app bar
     document.getElementById('channel-name').innerHTML = channel.name;

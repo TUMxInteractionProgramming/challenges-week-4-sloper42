@@ -1,4 +1,6 @@
 
+var currentChannel;
+
 var Yummy = {
    name: "#Yummy",
    createdOn:Date(2016,4,1),
